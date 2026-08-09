@@ -1,11 +1,11 @@
 import ProductCard from "./ProductCard";
 
-import touchSwitch from "../assets/images/products/TouchPanelSystem.jpg";
-import behindModule from "../assets/images/products/BehindModule.jpg";
-import curtains from "../assets/images/products/Curtains.jpg";
-import lighting from "../assets/images/products/Lighting.jpg";
-import theatre from "../assets/images/products/HomeTheater.jpg";
-import security from "../assets/images/products/Security.jpg";
+import touchSwitch from "../assets/images/Products/TouchPanelSystem.jpg";
+import behindModule from "../assets/images/Products/BehindModule.jpg";
+import curtains from "../assets/images/Products/Curtains.jpg";
+import lighting from "../assets/images/Products/Lighting.jpg";
+import theatre from "../assets/images/Products/homeTheater.jpg";
+import security from "../assets/images/Products/Security.jpg";
 
 const products = [
   {
