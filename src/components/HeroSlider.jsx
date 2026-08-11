@@ -36,6 +36,7 @@ const slides = [
       "Powerful automation solutions designed for modern offices and commercial spaces.",
   },
 ];
+
 function HeroSlider() {
   return (
     <section id="home">
@@ -48,7 +49,7 @@ function HeroSlider() {
         pagination={{ clickable: true }}
         navigation
         loop={true}
-        className="h-[600px]"
+        className="h-[420px] sm:h-[480px] md:h-[600px]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -65,26 +66,27 @@ function HeroSlider() {
               <div className="absolute inset-0 bg-black/50"></div>
 
               {/* Text */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6">
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-10 sm:px-12 md:px-6">
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-5 max-w-4xl">
                   {slide.title}
                 </h1>
 
-                <p className="text-lg md:text-xl max-w-2xl">
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xl md:max-w-2xl">
                   {slide.description}
                 </p>
 
                 {/* Explore Button */}
-                {/* <a
+                {/* 
+                <a
                   href="#solutions"
                   className="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-lg font-semibold transition duration-300"
                 >
                   Explore Solutions
-                </a> */}
+                </a>
+                */}
 
               </div>
-
             </div>
           </SwiperSlide>
         ))}
