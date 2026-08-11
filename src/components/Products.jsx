@@ -58,7 +58,7 @@ function Products() {
         {/* Heading */}
         <div className="text-center mb-16">
 
-          <h2 className="text-5xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-gray-900">
             Our Products
           </h2>
 

@@ -53,7 +53,7 @@ console.log(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-gray-900">
             Get In Touch
           </h2>
 

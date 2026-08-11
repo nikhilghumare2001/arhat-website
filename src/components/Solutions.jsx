@@ -73,7 +73,7 @@ export default function Solutions() {
 
         <div className="text-center">
 
-          <h2 className="text-5xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-gray-900">
             Our Solutions
           </h2>
 

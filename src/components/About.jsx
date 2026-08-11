@@ -12,7 +12,7 @@ function About() {
 
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-gray-900">
             About Arhat
           </h2>
 
