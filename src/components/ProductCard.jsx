@@ -1,28 +1,79 @@
+// Product Card Component
+// This component displays one product with an image, title and description.
+
 function ProductCard({ image, title, description }) {
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
 
+    // ==================== PRODUCT CARD ====================
+    <div
+      className="
+        group
+        bg-white
+        rounded-2xl
+        overflow-hidden
+        shadow-md
+        hover:shadow-2xl
+        hover:-translate-y-2
+        transition-all
+        duration-300
+      "
+    >
+
+      {/* ==================== PRODUCT IMAGE ==================== */}
       <div className="overflow-hidden">
+
         <img
           src={image}
           alt={title}
-          className="w-full h-60 object-cover group-hover:scale-110 transition duration-500"
+          className="
+            w-full
+            h-60
+            object-cover
+            group-hover:scale-110
+            transition
+            duration-500
+          "
         />
+
       </div>
 
+
+      {/* ==================== PRODUCT INFORMATION ==================== */}
       <div className="p-6">
 
+        {/* Product Name */}
         <h3 className="text-2xl font-bold text-gray-900">
           {title}
         </h3>
 
+        {/* Product Description */}
         <p className="mt-3 text-gray-600 leading-7">
           {description}
         </p>
 
-        {/* <button className="mt-6 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+
+        {/* ==================== VIEW PRODUCT BUTTON ==================== */}
+        {/*
+          This button is currently disabled/commented out.
+          We can enable it later if we want a product details page.
+        */}
+
+        {/*
+        <button
+          className="
+            mt-6
+            px-5
+            py-2
+            bg-blue-600
+            text-white
+            rounded-lg
+            hover:bg-blue-700
+            transition
+          "
+        >
           View Product →
-        </button> */}
+        </button>
+        */}
 
       </div>
 
@@ -30,4 +81,6 @@ function ProductCard({ image, title, description }) {
   );
 }
 
+
+// Export ProductCard so it can be used in Products.jsx
 export default ProductCard;

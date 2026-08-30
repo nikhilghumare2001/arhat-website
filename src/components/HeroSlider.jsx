@@ -1,98 +1,326 @@
+// ========================================
+// HERO SLIDER COMPONENT
+//
+// This section displays 5 main Arhat solutions
+// as a full-width image slider.
+//
+// Features:
+// 1. Automatic slide change
+// 2. Previous / Next navigation
+// 3. Clickable pagination dots
+// 4. Responsive height for mobile and desktop
+// 5. Title and description at bottom-right
+// ========================================
+
+
+// ========================================
+// IMPORT SWIPER
+// Swiper is used to create the image slider.
+// ========================================
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+
+// Swiper features
+import {
+  Autoplay,
+  Pagination,
+  Navigation,
+} from "swiper/modules";
+
+
+// ========================================
+// SWIPER CSS
+// These files provide the default slider
+// styling, navigation arrows and dots.
+// ========================================
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import slider1 from "../assets/images/SmartHome_Wireless_Automation.jpg";
-import slider2 from "../assets/images/slider2.jpeg";
-import slider3 from "../assets/images/slider3.jpeg";
-import slider4 from "../assets/images/slider4.jpg";
+
+// ========================================
+// IMPORT SLIDER IMAGES
+// All slider images are stored inside
+// the Sliders folder.
+// ========================================
+
+import slider1 from "../assets/images/Sliders/Slider_1.png";
+import slider2 from "../assets/images/Sliders/Slider_2.png";
+import slider3 from "../assets/images/Sliders/Slider_3.png";
+import slider4 from "../assets/images/Sliders/Slider_4.png";
+import slider5 from "../assets/images/Sliders/Slider_5.png";
+
+
+// ========================================
+// SLIDER DATA
+//
+// Each slide contains:
+// - image
+// - title
+// - description
+//
+// This makes it easy to change the
+// slider content later.
+// ========================================
 
 const slides = [
+
+  // Slide 1
   {
     image: slider1,
     title: "Smart Home Automation",
     description:
       "Experience comfort, control and intelligence — all at your fingertips.",
   },
+
+
+  // Slide 2
   {
     image: slider2,
     title: "Intelligent Lighting",
     description:
-      "Create the perfect atmosphere with smart and energy-efficient lighting.",
+      "Create the perfect atmosphere with intelligent lighting designed for comfort and energy efficiency.",
   },
+
+
+  // Slide 3
   {
     image: slider3,
     title: "Advanced Security",
     description:
-      "Protect your home and business with intelligent security and surveillance.",
+      "Protect your home and business with intelligent surveillance, access control and security solutions.",
   },
+
+
+  // Slide 4
   {
     image: slider4,
     title: "Smart Building Automation",
     description:
-      "Powerful automation solutions designed for modern offices and commercial spaces.",
+      "Optimize comfort, efficiency and control with intelligent automation for modern buildings.",
   },
+
+
+  // Slide 5
+  {
+    image: slider5,
+    title: "Electrical Distribution & Control",
+    description:
+      "Safe, reliable and smart electrical distribution solutions engineered for modern homes and commercial spaces.",
+  },
+
 ];
 
+
+// ========================================
+// HERO SLIDER COMPONENT
+// ========================================
+
 function HeroSlider() {
+
   return (
-    <section id="home">
+
+    // Main Home section
+    <section
+      id="home"
+      className="w-full"
+    >
+
+
+      {/* ========================================
+          SWIPER SLIDER
+
+          autoplay  → Changes slides automatically
+          pagination → Shows clickable dots
+          navigation → Shows next/previous arrows
+          loop       → Starts again after last slide
+      ======================================== */}
+
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
+
+        // Enable Swiper features
+        modules={[
+          Autoplay,
+          Pagination,
+          Navigation,
+        ]}
+
+
+        // Automatically change slide
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
         }}
-        pagination={{ clickable: true }}
-        navigation
-        loop={true}
-        className="h-[420px] sm:h-[480px] md:h-[600px]"
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative h-full w-full">
 
-              {/* Background Image */}
+
+        // Pagination dots
+        pagination={{
+          clickable: true,
+        }}
+
+
+        // Previous / Next arrows
+        navigation={true}
+
+
+        // Continue from first slide after last
+        loop={true}
+
+
+        // Responsive slider height
+        className="
+          h-[420px]
+          sm:h-[480px]
+          md:h-[600px]
+        "
+      >
+
+
+        {/* ========================================
+            DISPLAY ALL SLIDES
+        ======================================== */}
+
+        {slides.map((slide, index) => (
+
+          <SwiperSlide key={index}>
+
+
+            {/* ========================================
+                SLIDE CONTAINER
+            ======================================== */}
+
+            <div className="
+              relative
+              h-full
+              w-full
+              overflow-hidden
+            ">
+
+
+              {/* ========================================
+                  BACKGROUND IMAGE
+              ======================================== */}
+
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="
+                  absolute
+                  inset-0
+                  w-full
+                  h-full
+                  object-cover
+                "
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/50"></div>
 
-              {/* Text */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-10 sm:px-12 md:px-6">
+              {/* ========================================
+                  DARK OVERLAY
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-5 max-w-4xl">
-                  {slide.title}
-                </h1>
+                  Makes the image slightly darker
+                  so the text is easier to read.
+              ======================================== */}
 
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-xl md:max-w-2xl">
-                  {slide.description}
-                </p>
+              <div className="
+                absolute
+                inset-0
+                bg-black/30
+              "></div>
 
-                {/* Explore Button */}
-                {/* 
-                <a
-                  href="#solutions"
-                  className="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-lg font-semibold transition duration-300"
-                >
-                  Explore Solutions
-                </a>
-                */}
+
+              {/* ========================================
+                  DESCRIPTION BOX
+
+                  The title and description are
+                  displayed at the bottom-right
+                  of the image.
+              ======================================== */}
+
+              <div className="
+                absolute
+                bottom-10
+                right-6
+                sm:right-10
+                md:right-14
+                max-w-xl
+              ">
+
+
+                {/* Description background box */}
+
+                <div className="
+                  bg-black/60
+                  backdrop-blur-sm
+                  border-l-4
+                  border-blue-500
+                  rounded-lg
+                  px-5
+                  py-4
+                  sm:px-7
+                  sm:py-5
+                  text-white
+                  shadow-xl
+                ">
+
+
+                  {/* ========================================
+                      SLIDE TITLE
+                  ======================================== */}
+
+                  <h1 className="
+                    text-xl
+                    sm:text-2xl
+                    md:text-3xl
+                    font-bold
+                    mb-2
+                  ">
+
+                    {slide.title}
+
+                  </h1>
+
+
+                  {/* ========================================
+                      SLIDE DESCRIPTION
+                  ======================================== */}
+
+                  <p className="
+                    text-sm
+                    sm:text-base
+                    md:text-lg
+                    leading-relaxed
+                    text-gray-200
+                  ">
+
+                    {slide.description}
+
+                  </p>
+
+
+                </div>
 
               </div>
+
+
             </div>
+
           </SwiperSlide>
+
         ))}
+
       </Swiper>
+
     </section>
   );
 }
+
+
+// ========================================
+// EXPORT COMPONENT
+// This allows HeroSlider to be used
+// in App.jsx or Home.jsx.
+// ========================================
 
 export default HeroSlider;
