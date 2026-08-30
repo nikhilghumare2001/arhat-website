@@ -22,6 +22,11 @@ import theatre from "../assets/images/Products/homeTheater.jpg";
 // Security and CCTV image
 import security from "../assets/images/Products/Security.jpg";
 
+// 3 Module Biticino keypad
+import keypad from "../assets/images/products/3M_keypad.jpg"
+
+// 20ch knx 2678
+import knx_legrand20ch from "../assets/images/Products/20ch_knx2678.jpg"
 
 // ==================== PRODUCT DATA ====================
 // All product information is stored in one array.
@@ -69,6 +74,18 @@ const products = [
     title: "Security & CCTV Systems",
     description:
       "Protect your home and business with intelligent surveillance and access control.",
+  },
+  {
+    image: keypad,
+    title: "3-Module Biticino Keypad",
+    description:
+      "Living NOW is the new Living generation, featured by an innovative design that redefines the relationship between cover plate and functions",
+  },
+  {
+    image: knx_legrand20ch,
+    title: "20 Channel KNX_Actuator",
+    description:
+      "Powerful KNX actuator for centralized control of lighting and electrical loads, providing reliable, flexible automation for smart homes and buildings.",
   },
 
 ];
