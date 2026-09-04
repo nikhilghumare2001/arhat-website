@@ -23,7 +23,7 @@ import theatre from "../assets/images/Products/homeTheater.jpg";
 import security from "../assets/images/Products/Security.jpg";
 
 // 3 Module Biticino keypad
-import keypad from "../assets/images/products/3M_keypad.jpg"
+import keypad from "../assets/images/products/3Module_keypad.jpg"
 
 // 20ch knx 2678
 import knx_legrand20ch from "../assets/images/Products/20ch_knx2678.jpg"
