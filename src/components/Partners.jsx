@@ -10,109 +10,62 @@ import rti from "../assets/images/Partners/rti_logo.jpg";
 import schneider from "../assets/images/Partners/schenider_logo.jpg";
 import knx from "../assets/images/Partners/knx_logo.jpg";
 
-
-// List of all technology partner logos
 const partners = [
-  abb,
-  control4,
-  elan,
-  hikvision,
-  legrand,
-  lutron,
-  nice,
-  rti,
-  schneider,
-  knx,
+  abb, control4, elan, hikvision, legrand,
+  lutron, nice, rti, schneider, knx,
 ];
 
-
-// Main Partners component
 function Partners() {
   return (
-
-    // ==================== PARTNERS SECTION ====================
-    <section className="py-24 bg-white">
-
-      {/* Main container */}
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
-
-
-        {/* ==================== SECTION HEADING ==================== */}
+        {/* Heading */}
         <div className="text-center mb-16">
-
-          {/* Section title */}
-          <h2 className="text-4xl font-bold text-gray-900">
-            Our Technology Partners
-          </h2>
-
-          {/* Blue line below heading */}
+          <h2 className="text-4xl font-bold text-gray-900">Our Technology Partners</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mt-5 rounded"></div>
-
-          {/* Section description */}
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
             We collaborate with globally trusted brands to deliver reliable,
             innovative, and future-ready smart automation solutions.
           </p>
-
         </div>
 
+        {/* Moving Strip */}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex w-max animate-scroll">
 
-        {/* ==================== PARTNER LOGOS ==================== */}
-        {/* 
-          Responsive grid:
-          2 columns on mobile
-          3 columns on medium screens
-          5 columns on large screens
-        */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-
-          {/* Display every partner logo */}
-          {partners.map((logo, index) => (
-
-            <div
-              key={index}
-              className="
-                bg-white
-                rounded-xl
-                shadow-md
-                p-6
-                flex
-                items-center
-                justify-center
-                hover:shadow-xl
-                transition
-                duration-300
-                hover:-translate-y-2
-              "
-            >
-
-              {/* Partner logo */}
-              <img
-                src={logo}
-                alt="Technology Partner Logo"
-                className="
-                  h-16
-                  object-contain
-                  grayscale
-                  hover:grayscale-0
-                  transition
-                  duration-300
-                "
-              />
-
-            </div>
-
-          ))}
-
+            {/* Double the list for seamless loop */}
+            {[...partners,...partners].map((logo, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-md p-6 mx-4 flex items-center justify-center min-w-[180px] h-[100px]"
+              >
+                <img
+                  src={logo}
+                  alt="Technology Partner Logo"
+                  className="h-12 object-contain grayscale hover:grayscale-0 transition duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-
       </div>
 
+      {/* Animation CSS */}
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+       .animate-scroll {
+          animation: scroll 25s linear infinite;
+        }
+       .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }
 
-
-// Export component so it can be used in other files
 export default Partners;

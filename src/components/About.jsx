@@ -59,7 +59,7 @@ function About() {
 
   <p className="mt-5 text-lg md:text-xl text-gray-600 leading-8">
     We specialize in integrating
-      <b>lighting, climate control, audio-video, security, and energy management
+    <b> lighting, climate control, audio-video, security, and energy management
    </b> into one simple and intuitive platform.
   </p>
 

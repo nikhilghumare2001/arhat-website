@@ -8,7 +8,7 @@ import ProductCard from "./ProductCard";
 import touchSwitch from "../assets/images/Products/TouchPanelSystem.jpg";
 
 // Smart behind-module image
-import behindModule from "../assets/images/Products/BehindModule.jpg";
+import behindModule from "../assets/images/Products/sensor.jpg";
 
 // Smart curtains and blinds image
 import curtains from "../assets/images/Products/Curtains.jpg";
@@ -26,7 +26,7 @@ import security from "../assets/images/Products/Security.jpg";
 import keypad from "../assets/images/Products/3Module_Keypad.jpg"
 
 // 20ch knx 2678
-import knx_legrand20ch from "../assets/images/Products/20ch_knx2678.jpg"
+import knx_legrand20ch from "../assets/images/Products/AC control.jpg"
 
 // ==================== PRODUCT DATA ====================
 // All product information is stored in one array.
@@ -36,16 +36,16 @@ const products = [
 
   {
     image: touchSwitch,
-    title: "Smart Touch Switch Boards",
+    title: "Smart Touch Panel",
     description:
       "Elegant touch panels for lighting, scene control and smart home automation.",
   },
 
   {
     image: behindModule,
-    title: "Smart Behind Modules",
+    title: "Smart Motion Sensor",
     description:
-      "Upgrade your existing switches into smart switches without replacing them.",
+      "Detect motion and make your home smarter. This wireless motion sensor automatically turns on lights when you enter and turn off when you leave. ",
   },
 
   {
@@ -77,15 +77,15 @@ const products = [
   },
   {
     image: keypad,
-    title: "3-Module Biticino Keypad",
+    title: "Smart Keypads",
     description:
       "Living NOW is the new Living generation, featured by an innovative design that redefines the relationship between cover plate and functions",
   },
   {
     image: knx_legrand20ch,
-    title: "20 Channel KNX_Actuator",
+    title: "Smart AC Controls",
     description:
-      "Powerful KNX actuator for centralized control of lighting and electrical loads, providing reliable, flexible automation for smart homes and buildings.",
+      "Control your AC from your phone. Set temperature, schedule, and save energy from anywhere.",
   },
 
 ];
